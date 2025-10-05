@@ -2,6 +2,14 @@
 
 ## Introdução
 
+O projeto Indicadores Econômicos tem como alvo central construir um ambiente integrado de coleta, tratamento, análise e visualização de dados socioeconômicos do Brasil, a fim de trazer praticidade na obtenção de tais variáveis, além de gerar evidências empíricas para pesquisas em economia aplicada e políticas públicas. Reunindo diferentes fontes oficiais de dados --- como RAIS, PNADC, Atlas do Estado Brasileiro, Ipea Data, Banco Central e SIDRA/IBGE ---, o projeto organiza informações de mercado de trabalho, setor público, condições socioeconômicas da população e indicadores macroeconômicos em um conjunto de scripts em R.
+
+Cada componente do projeto cumpre um papel complementar. O módulo baseado na RAIS investiga a estrutura ocupacional de Minas Gerais, analisando padrões de remuneração e desigualdades salariais a partir de recortes como sexo, cor, escolaridade e setor de atividade, além de empregar métodos econométricos como a decomposição de Oaxaca para compreender diferenças salariais. Já a etapa com dados do Atlas do Estado Brasileiro explora a evolução da remuneração média no setor público, permitindo comparações entre poderes, esferas federativas e grupos demográficos ao longo do tempo.
+
+A análise com microdados da PNADC aprofunda a investigação sobre os determinantes salariais das mulheres no Sudeste brasileiro, aplicando técnicas de regressão linear e testes econométricos para avaliar o impacto de variáveis como escolaridade, idade, cor, jornada e tipo de vínculo sobre a renda. Por fim, a integração de dados do Banco Central, Ipea e IBGE traz ao projeto uma dimensão macroeconômica, ao reunir séries históricas de taxa Selic, saldo do Novo Caged e IPCA --- indicadores essenciais para compreender o ambiente econômico e contextualizar as dinâmicas observadas no mercado de trabalho.
+
+Ao consolidar essas diferentes frentes analíticas em um único repositório, o projeto não apenas oferece um panorama abrangente do mercado de trabalho e da economia brasileira, mas também serve como base para estudos quantitativos, desenvolvimento de modelos econométricos e análises exploratórias em economia aplicada.
+
 ## Scripts
 
 ### dados_rais
@@ -16,7 +24,7 @@ Após o tratamento dos dados, o script gera estatísticas descritivas e visualiz
 
 Com o objetivo de preparar os dados para análises econométricas, o script ainda gera variáveis dummy. Essa transformação converte categorias em variáveis binárias, facilitando sua inclusão em modelos estatísticos. São geradas dummies para sexo, cor, níveis de instrução e setores econômicos.
 
-A última etapa analisa a desigualdade salarial por meio da decomposição de Oaxaca-Blinder, técnica econométrica amplamente utilizada na literatura sobre mercado de trabalho. O modelo estima a diferença média de remuneração entre homens e mulheres, controlando por idade, escolaridade, cor e setor de atividade. Os resultados revelam que, em média, as mulheres recebem R$258,76 a menos do que os homens, mesmo após o controle pelas variáveis explicativas. Aproximadamente 58% dessa diferença pode ser atribuída a características observáveis, enquanto os 42% restantes não são explicados pelo modelo, sugerindo a presença de fatores estruturais, como discriminação de gênero ou barreiras não mensuradas à inserção e progressão profissional.
+A última etapa analisa a desigualdade salarial por meio da decomposição de Oaxaca-Blinder, técnica econométrica amplamente utilizada na literatura sobre mercado de trabalho. O modelo estima a diferença média de remuneração entre homens e mulheres, controlando por idade, escolaridade, cor e setor de atividade. Os resultados revelam que, em média, as mulheres recebem R\$258,76 a menos do que os homens, mesmo após o controle pelas variáveis explicativas. Aproximadamente 58% dessa diferença pode ser atribuída a características observáveis, enquanto os 42% restantes não são explicados pelo modelo, sugerindo a presença de fatores estruturais, como discriminação de gênero ou barreiras não mensuradas à inserção e progressão profissional.
 
 ### dados_aebdata
 
